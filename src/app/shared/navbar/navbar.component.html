@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark sidebar-bg">
+  <div class="container-fluid">
+    <!-- Logo redirige vers Home -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home">
+      <i class="bi bi-person-lines-fill me-2" style="font-size: 1.8rem;"></i>
+      <span class="fw-bold">Mes Contacts</span>
+    </a>
+
+    <!-- Toggle Button for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Barre de Recherche -->
+      <form class="d-flex mx-auto search-container">
+        <input class="form-control search-bar" type="search" placeholder="Rechercher un contact..." aria-label="Search">
+        <button class="btn btn-primary shadow search-btn" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
+      <!-- Boutons de Navigation -->
+      <div class="d-flex align-items-center">
+        <button class="btn btn-warning shadow me-2 position-relative" routerLink="notifications">
+          <i class="bi bi-bell"></i>
+          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle"></span>
+        </button>
+
+        <button class="btn btn-success shadow me-2" routerLink="/message-form">
+          <i class="bi bi-envelope"></i>
+        </button>
+
+        <a class="btn btn-info shadow me-2" routerLink="/settings">
+          <i class="bi bi-gear"></i>
+        </a>
+
+        <div id="captureArea">
+          <button class="btn btn-secondary shadow me-2" (click)="captureScreenshot()">
+            <i class="bi bi-camera"></i> 
+          </button>
+        </div>
+
+        <!-- Dropdown Profil -->
+        <div class="dropdown">
+          <button class="btn btn-dark shadow dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" routerLink="/mon-compte">Mon compte</a></li>
+            <li><a class="dropdown-item text-danger" href="#" (click)="logout()">Déconnexion</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

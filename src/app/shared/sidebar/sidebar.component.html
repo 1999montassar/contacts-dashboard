@@ -1,0 +1,36 @@
+<div class="sidebar" [class.closed]="isSidebarClosed">
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    <i class="bi bi-list"></i>
+  </button>
+  
+  <ul>
+    <li>
+      <a routerLink="/contacts" routerLinkActive="active">
+        <i class="bi bi-people"></i> <span *ngIf="!isSidebarClosed">Contacts</span>
+      </a>
+    </li>
+
+    <li [class.open]="isMessagesOpen">
+      <a (click)="toggleMessages()">
+        <i class="bi bi-envelope"></i> <span *ngIf="!isSidebarClosed">Messages</span>
+      </a>
+      <ul *ngIf="isMessagesOpen && !isSidebarClosed">
+        <li>
+          <a routerLink="/messages/sent" routerLinkActive="active">Messages envoyés</a>
+        </li>
+        <li>
+          <a routerLink="/messages/received" routerLinkActive="active">Messages reçus</a>
+        </li>
+        <li>
+          <a routerLink="/messages/favorites" routerLinkActive="active">Favoris</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a routerLink="/trash" routerLinkActive="active">
+        <i class="bi bi-trash"></i> <span *ngIf="!isSidebarClosed">Corbeille</span>
+      </a>
+    </li>
+  </ul>
+</div>

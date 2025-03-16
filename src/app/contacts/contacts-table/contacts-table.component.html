@@ -1,0 +1,73 @@
+<div class="container mt-4">
+  <h3 class="text-center">Liste des Contacts</h3>
+
+  <!-- Bouton Ajouter -->
+  <div class="d-flex justify-content-center mb-3">
+    <button class="btn btn-primary" style="background-color: #555;" (click)="ajouterContact()">
+      <i class="bi bi-plus-circle"></i> Ajouter
+    </button>                                  
+  </div>
+
+  <!-- Tableau des contacts -->
+  <div class="table-responsive mx-auto"> 
+    <table class="table table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+          <td>{{ i + 1 }}</td>
+
+          <td>
+            <span *ngIf="!contact.isEditing">{{ contact.nom }}</span>
+            <input *ngIf="contact.isEditing" type="text" class="form-control" [(ngModel)]="contact.nom">
+          </td>
+
+          <td>
+            <span *ngIf="!contact.isEditing">{{ contact.email }}</span>
+            <input *ngIf="contact.isEditing" type="email" class="form-control" [(ngModel)]="contact.email">
+          </td>
+
+          <td>
+            <span *ngIf="!contact.isEditing">{{ contact.telephone }}</span>
+            <input *ngIf="contact.isEditing" type="text" class="form-control" [(ngModel)]="contact.telephone">
+          </td>
+
+          <!-- Actions -->
+          <td class="action-buttons">
+            <!-- Voir les détails -->
+            <button class="btn btn-sm text-white" style="background-color: #555;" (click)="consulterContact(contact)">
+              <i class="bi bi-eye"></i>
+            </button>
+
+            <!-- Modifier -->
+            <button *ngIf="!contact.isEditing" class="btn btn-sm text-white" style="background-color: #555;" (click)="modifierContact(contact)">
+              <i class="bi bi-pencil"></i>
+            </button>
+
+            <!-- Sauvegarder -->
+            <button *ngIf="contact.isEditing" class="btn btn-sm text-white" style="background-color: #555;" (click)="sauvegarderContact(contact)">
+              <i class="bi bi-save"></i>
+            </button>
+
+            <!-- Supprimer -->
+            <button class="btn btn-sm text-white" style="background-color: #555;" (click)="supprimerContact(contact)">
+              <i class="bi bi-trash"></i>
+            </button>
+
+            <!-- Favori -->
+            <button class="btn btn-sm text-white" style="background-color: #555;" (click)="ajouterFavoris(contact)">
+              <i class="bi" [class.bi-star-fill]="contact.isFavorite" [class.bi-star]="!contact.isFavorite"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

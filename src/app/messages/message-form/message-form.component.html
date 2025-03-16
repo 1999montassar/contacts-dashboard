@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <h3>Discussion</h3>
+
+  <!-- Affichage des messages de la discussion -->
+  <div class="messages" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;">
+    <div *ngFor="let message of messages" class="message mb-3" [ngClass]="{'sender': message.sender === 'Moi', 'receiver': message.sender !== 'Moi'}">
+      <strong>{{ message.sender }}:</strong>
+      <p>{{ message.content }}</p>
+    </div>
+  </div>
+
+  <!-- Formulaire pour envoyer un message -->
+  <form [formGroup]="messageForm" (ngSubmit)="envoyerMessage()">
+    <div class="mb-3">
+      <label for="modeEnvoi" class="form-label">Choisir le mode d'envoi</label>
+      <div>
+        <input type="radio" id="email" formControlName="modeEnvoi" value="email" class="form-check-input">
+        <label for="email" class="form-check-label">Email</label>
+      </div>
+      <div>
+        <input type="radio" id="telephone" formControlName="modeEnvoi" value="telephone" class="form-check-input">
+        <label for="telephone" class="form-check-label">Numéro de téléphone</label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="destinataire" class="form-label">Destinataire</label>
+      <input type="text" id="destinataire" formControlName="destinataire" class="form-control" placeholder="Entrez l'email ou le numéro de téléphone">
+    </div>
+
+    <div class="mb-3">
+      <textarea formControlName="message" class="form-control" rows="3" placeholder="Tapez votre message..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success me-2" [disabled]="messageForm.invalid">
+      <i class="bi bi-send"></i> Envoyer
+    </button>
+    <button type="button" class="btn btn-danger" (click)="annulerMessage()">
+      <i class="bi bi-x-circle"></i> Annuler
+    </button>
+  </form>
+</div>

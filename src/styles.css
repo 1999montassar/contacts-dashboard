@@ -1,0 +1,461 @@
+/* Sidebar */
+.sidebar {
+  background-color: #800000; /* Rouge bordeaux */
+  border-right: 1px solid #555;
+  width: 250px;
+  padding-top: 20px;
+  position: fixed;
+  height: 100%;
+  transition: width 0.3s ease;
+  color: #fff;
+}
+
+/* Sidebar fermé */
+.sidebar.closed {
+  width: 80px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+/* Liens de la sidebar */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 20px;
+  background-color: #800000; /* Fond rouge bordeaux par défaut */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px; /* Coins arrondis */
+}
+
+/* Survol des liens dans la sidebar */
+.sidebar a:hover {
+  background-color: #343a40; /* Fond gris foncé au survol */
+  color: #fff; /* Texte blanc au survol */
+}
+
+/* Icônes */
+.sidebar ul li a i {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.sidebar ul li a span {
+  font-size: 1.1rem;
+}
+
+/* Bouton de la sidebar */
+.toggle-btn {
+  background-color: #800000; /* Rouge bordeaux */
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 50%; /* Forme circulaire */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 100px;
+}
+
+.toggle-btn:hover {
+  background-color: #343a40; /* Gris foncé au survol */
+  transform: scale(1.1); /* Légère animation au survol */
+}
+
+.toggle-btn i {
+  font-size: 1.5rem;
+}
+/* Navbar fixe en haut */
+.navbar {
+  background-color: #800000; /* Rouge bordeaux */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  position: fixed; /* Fixe la navbar en haut */
+  top: 0; /* Positionne la navbar en haut */
+  left: 0; /* Assure que la navbar est alignée à gauche */
+  right: 0; /* Assure que la navbar est alignée à droite */
+  z-index: 999; /* Assure que la navbar reste au-dessus du contenu */
+}
+
+/* Ajouter un espace supérieur pour que le contenu ne soit pas caché sous la navbar */
+.main-container {
+  margin-top: 70px; /* Ajustez selon la hauteur de votre navbar */
+}
+
+/* Navbar (inchangée) */
+.navbar {
+  background-color: #800000; /* Rouge bordeaux */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar .btn {
+  border-radius: 50%; /* Forme circulaire */
+  padding: 12px; /* Taille uniforme pour le cercle parfait */
+  font-size: 1.4rem;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  background-color: #800000; /* Rouge bordeaux */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+.navbar .btn:hover {
+  transform: scale(1.1);
+  background-color: #661010; /* Rouge bordeaux foncé */
+}
+
+.navbar .bi {
+  font-size: 1.5rem; /* Taille des icônes de la navbar */
+}
+
+/* Survol des icônes de la navbar */
+.navbar .btn:hover .bi {
+  font-size: 1.7rem; /* Augmenter la taille des icônes au survol */
+}
+
+.navbar .navbar-nav .nav-link {
+  font-size: 1.2rem; /* Taille des liens dans la navbar */
+}
+
+.search-bar {
+  border-radius: 25px !important;
+  padding: 8px 15px !important;
+  border: 1px solid #ccc !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #800000 !important;
+  box-shadow: 0px 0px 8px rgba(128, 0, 0, 0.5) !important;
+}
+
+.search-btn {
+  border-radius: 50%; /* Cercle parfait */
+  padding: 10px;
+  background-color: #800000; /* Rouge bordeaux */
+  color: #fff;
+  font-size: 1.4rem;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+.search-btn:hover {
+  background-color: #661010; /* Rouge bordeaux foncé */
+}
+
+/* Notifications et autres boutons */
+.btn-outline-warning {
+  position: relative;
+  padding: 10px 12px;
+  font-size: 1.4rem;
+}
+
+.btn-outline-warning i {
+  font-size: 1.5rem;
+}
+
+.btn-outline-success i {
+  font-size: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #800000; /* Rouge bordeaux */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #800000; /* Rouge bordeaux foncé */
+}
+
+.navbar-btn {
+  width: 59px !important;
+  height: 59px !important; /* Maintien de la forme circulaire */
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.navbar-btn:hover {
+  transform: scale(1.1) !important;
+}
+
+/* Icônes modernisées */
+.navbar .bi {
+  font-size: 1.3rem;
+}
+
+.search-bar {
+  border-radius: 20px;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  box-shadow: 0 0 10px rgba(128, 0, 0, 0.5);
+}
+
+.search-btn {
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #661010; /* Rouge bordeaux foncé */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+
+
+/* Si la sidebar est fermée */
+.sidebar.closed + .main-container {
+  margin-left: 80px; /* Décalage quand la sidebar est fermée */
+}
+
+.container {
+  width: 50%;
+  height: 20%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: none; /* Supprime l'ombre portée */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  top: 50px;
+  background-color: transparent; /* Supprime le fond blanc */
+  border: none; /* Supprime toute bordure */
+  
+}
+
+.table th,
+.table td {
+  text-align: center;
+ 
+}
+
+/* Tous les boutons circulaires */
+.btn-circle {
+  border-radius: 50%; /* Forme circulaire */
+  padding: 12px; /* Taille uniforme pour le cercle parfait */
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  background-color: #800000; /* Rouge bordeaux */
+  color: #fff;
+  border: none;
+}
+
+/* Survol des boutons circulaires */
+.btn-circle:hover {
+  transform: scale(1.1); /* Légère animation au survol */
+  background-color: #800000; /* Rouge bordeaux foncé */
+}
+
+/* Si tu utilises des icônes dans les boutons circulaires */
+.btn-circle i {
+  font-size: 1.5rem; /* Taille des icônes */
+}
+
+/* Application aux autres boutons de la navbar, etc. */
+.navbar .btn,
+.toggle-btn,
+.search-btn,
+.navbar-btn,
+.btn-outline-warning,
+.btn-primary {
+  border-radius: 50%; /* Forme circulaire */
+  padding: 12px; /* Taille uniforme */
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  background-color: #800000; /* Rouge bordeaux */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+/* Survol de tous les boutons circulaires */
+.navbar .btn:hover,
+.toggle-btn:hover,
+.search-btn:hover,
+.navbar-btn:hover,
+.btn-outline-warning:hover,
+.btn-primary:hover {
+  transform: scale(1.1);
+  background-color: #800000; /* Rouge bordeaux foncé */
+}
+
+.navbar .bi {
+  font-size: 1.5rem; /* Taille des icônes dans la navbar */
+}
+
+.btn-circle {
+  background-color: #800000 !important;
+  color: #fff !important;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #800000 !important; /* Rouge bordeaux */
+  color: #fff !important; /* Texte blanc */
+  border-color: #800000 !important; /* Bordure rouge bordeaux */
+}
+
+.nav-tabs .nav-link {
+  color: #343a40 !important; /* Gris foncé pour les onglets inactifs */
+}
+
+.nav-tabs .nav-link:hover {
+  color: #800000 !important; /* Rouge bordeaux au survol */
+}
+
+h1 {
+  margin-top: 100px;
+ 
+}
+
+h3{
+  margin-top: 100px;
+
+}
+
+/* Amélioration du design */
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+img.rounded-circle {
+  object-fit: cover;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alignement parfait des boutons d'action dans le tableau */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Espacement uniforme entre les boutons */
+  flex-wrap: nowrap; /* Empêche le retour à la ligne */
+}
+
+/* Assure que les boutons ont la même taille */
+.action-buttons .btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+/* Style du bouton de restauration */
+.restore-btn {
+  background-color: #555 !important; /* Gris foncé */
+  color: white !important; /* Texte blanc */
+  border: none;
+  padding: 8px 12px; /* Ajustement de la taille */
+  border-radius: 50%; /* Forme arrondie */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* Taille de l'icône */
+}
+
+/* Effet au survol */
+.restore-btn:hover {
+  background-color: #555 !important; /* Légèrement plus clair */
+  transform: scale(1.1); /* Zoom léger */
+}
+
+/* Pour éviter l'écrasement par Bootstrap */
+.btn-circle {
+  border-radius: 50% !important; /* Assure la forme circulaire */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+.custom-card {
+  width: 130%; /* Ajuste la largeur pour qu'elle ne prenne pas tout l'écran */
+  max-width: 600px; /* Plus large pour une meilleure lisibilité */
+  min-width: 350px; /* Un minimum plus large pour ne pas être trop serré */
+  height: auto; 
+  min-height: 40px; /* Augmenté pour plus d'espace */
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 140px;
+  padding: 25px; /* Plus de padding pour l'aération */
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    max-width: 90%; /* Plus de flexibilité sur tablettes */
+    min-width: 330px; /* Augmenté légèrement */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-card {
+    max-width: 95%;
+    min-width: 320px;
+    padding: 20px; /* Légèrement augmenté pour éviter un effet trop compressé */
+  }
+}
+
+
+
+
+
+
